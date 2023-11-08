@@ -1,0 +1,60 @@
+@charset "UTF-8";
+
+:root {
+    /* //css에서 변수 만들기 */
+
+    --color: red;
+    --color2: blue;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    /* //변수를 사용하는방법 */
+    color: var(--color);
+    background-color: var(--color2);
+}
+
+.page1 {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page1 .card {
+    width: 300px;
+    height: 450px;
+    position: relative;
+}
+
+.page1 .card span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: calc(100% / 6);
+    left: calc(100% / 6 * var(--i));
+    height: 100%;
+}
+
+.page1 .card img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+    opacity: 0;
+    /* 어떤 이벤트도 받지않겠다(hover나클릭전부) */
+}
+
+.page1 .card span:hover + img{  /* span태그의 바로밑 형제를 부르는 방법은 + 이다 */
+    opacity: 1;
+}
+
+.page1 .card img:nth-of-type(1){/* 형제가 img만 있는게 아니기때문에 nth of type을 쓰는게좋다*/
+ opacity: 1;
+} 

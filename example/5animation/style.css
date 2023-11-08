@@ -1,0 +1,131 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: lightgray;
+}
+
+.box1 {
+    width: 300px;
+    height: 50px;
+    margin: 100px auto 30px;
+    position: relative;
+}
+
+.box1 .child {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    background-color: #1cd3da;
+    border-radius: 10px;
+    font-size: 22px;
+    line-height: 50px;
+    /*    transition-property:transform;
+    transition-duration:0.8s;
+    transition-delay: 0.3s;
+    transition-timing-function: ease; */
+
+
+    transition: transform 0.8s 0.3s ease;
+}
+
+.box1:hover .child {
+    transform: translateY(-50px);
+}
+
+.box2 {
+    width: 400px;
+    font-size: 30px;
+    color: #222;
+    background-color: aqua;
+    text-align: center;
+    margin: 0 auto 50px;
+    overflow: hidden;
+}
+
+.box2 p {
+    transform: translateX(-100%);
+    transition: 0.5s;
+    transition-timing-function: cubic-bezier(0.73, 0.18, 0.18, 1.76);
+}
+
+.box2:hover p {
+    transform: translateX(0);
+}
+
+.box2 .one {
+    transition-delay: 0.3s;
+}
+
+.box2 .two {
+    transition-delay: 0.5s;
+}
+
+.box2 .three {
+    transition-delay: 0.9s;
+}
+
+.box3 {
+    width: 100px;
+    height: 100px;
+    background-color: #4f9c10;
+    font-size: 30px;
+    line-height: 100px;
+    text-align: center;
+    animation-name: box_ani;
+    /* // keyframe의 이름을 연결한다 */
+    animation-duration: 2s;
+    /* 애니메이션의 반복횟수 // 무한반복시에는 infinite라고 적으면됨 */
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+    /* alternate 정 - 역 - 정 
+    revese 위치의 시작이 끝지점*/
+
+    /* 애니메이션 지연시간 */
+    animation-delay: 1s;
+    /* 애니메이션 가속도 */
+    animation-timing-function: ease;
+    /* 애니메이션 시작점과 끝난후 처리방법 */
+    /* fowards 애니메이션이 끝난상태에서 멈춤 */
+    /* backwards 애니메이션의 시작이 keyframes의 0%상태에서 시작 */
+    /* fowards 와 backwards를 동시에 적용 하는방법 both */
+    animation-fill-mode: both;
+}
+
+.box4 {
+    width: 100px;
+    height: 100px;
+    background-color: #ec2a1c;
+    font-size: 30px;
+    line-height: 100px;
+    text-align: center;
+    animation-name: box_ani2;
+}
+
+@keyframes box_ani2{
+    0%{transform: translate(0,0);}
+    25%{transform: translate(200px,0);}
+    50%{transform: translate(200px,200px);}
+    75%{transform: translate(0,200px);}
+    100%{transform: translate(0,0);}
+}
+
+@keyframes box_ani {
+    from {
+        margin-left: 100px
+    }
+
+    /* 시간의 시작지점 from 대신 0% 라고 적어도된다. */
+    to {
+        margin-left: 400px
+    }
+
+    /* 시간의 종료지점 from 대신 100% 라고 적어도된다. */
+}

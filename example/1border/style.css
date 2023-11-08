@@ -1,0 +1,85 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.border {
+    height: 100vh;
+    background-color: #f3f8c2;
+}
+
+/* vh는 지금 보이고있는 화면의 높이비율 */
+.border .boder_blob {
+    width: 480px;
+    height: 480px;
+    position: relative;
+    left: calc(50% - 240px);
+    top: calc(50% - 240px);
+    background-color: #6200ff;
+    /* 수평:h 수직:v 왼쪽:l 오른쪽:r 위:t 아래쪽:b */
+    /*  border-radius: htl htr hbr hbl / vtl vtr vbr vbl ;
+       border-radius: 26% 74% 30% 70% / 65% 30% 70% 35% ; */
+    border-radius: 26% 74% 30% 70% / 65% 30% 70% 35%;
+    overflow: hidden;
+    /*border-radius: 10px 40px;  tr,br  / tr,bl */
+    animation: go 6s linear infinite alternate both ;
+}
+
+.border .boder_blob img {
+    width: 100%;
+}
+
+.ro {
+    width: 480px;
+    height: 480px;
+    position: absolute;
+    left: calc(50% - 240px);
+    top: calc(50% - 240px);
+    animation: rotate 6s linear infinite alternate both;
+}
+
+.ro .border_blob2 {
+    width: 480px;
+    height: 480px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border: 1px solid #222;
+    animation: go 6s linear infinite alternate both;
+}
+
+.ro .border_blob2.bb2 {
+    animation-delay: 2s;
+}
+
+
+
+
+
+
+
+
+
+
+
+@keyframes go {
+    0% {
+        border-radius: 85% 15% 85% 15% / 15% 85% 15% 85%;
+    }
+
+    50% {
+        border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
+    }
+
+    100% {
+        border-radius: 15% 85% 15% 85% / 85% 15% 85% 15%;
+    }
+}
+
+@keyframes rotate {
+    0% {transform: rotate(120deg);}
+    50% {transform: rotate(240deg);}
+    100% {transform: rotate(360deg);}
+} 

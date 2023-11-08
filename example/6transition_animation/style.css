@@ -1,0 +1,232 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: lightgray;
+}
+
+.box1 {
+    position: relative;
+    width: 300px;
+    height: 50px;
+    background-color: #fff;
+    margin: 100px auto 30px;
+    text-align: center;
+}
+
+.box1 .child {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: orangered;
+    color: #fff;
+    font-size: 22px;
+    border-radius: 10px;
+    line-height: 50px;
+
+    /* transition-property:transform;
+    transition-duration: 0.8s;
+    transition-timing-function:ease;
+    transition-delay: 0.5s; */
+
+    /* transition: transform 0.8s 0.5s ease,background-color 0.5s,color 0.3s; */
+    transition: all 0.5s;
+    /* //all은 transform,background-color,color를 모두 포함 */
+    transition: 0.5s;
+    /* //all은 생략할수 있다. */
+}
+
+.box1:hover .child {
+    transform: translateY(-50px);
+    background-color: orchid;
+    color: #222;
+}
+
+
+.box2 {
+    width: 400px;
+    font-size: 30px;
+    color: #222;
+    background-color: aquamarine;
+    text-align: center;
+    margin: 0 auto 50px;
+}
+
+.box2 p {
+    transform: translateX(-100%);
+    transition: 0.5s;
+    transition-timing-function: cubic-bezier(0.92, 0.21, 0.1, 1.74);
+}
+
+.box2:hover p {
+    transform: translateX(0%);
+}
+
+.box2 .one {
+    transition-delay: 0.3s;
+}
+
+.box2 .two {
+    transition-delay: 0.6s;
+}
+
+.box2 .three {
+    transition-delay: 0.9s;
+}
+
+
+
+.box3 {
+    width: 100px;
+    height: 100px;
+    background-color: coral;
+    text-align: center;
+    font-size: 30px;
+    line-height: 100px;
+
+    animation-name: box_ani;
+    /* //keyframes의 이름을 연결한다 */
+    /* 애니메이션의 지속시간 second의 약자(초) */
+    animation-duration: 2s;
+    /* 애니메이션의 반복횟수// 무한반복시에는 infinite */
+    animation-iteration-count: 1;
+    /* 애니메이션의 방향
+    normal 기본값
+    alternate 정-> 역 -> 정 
+    alternate-reverse 역->정->역
+    reverse 위치의 시작이 끝지점
+    */
+    animation-direction: normal;
+    /* 애니메이션 지연시간 */
+    animation-delay: 1s;
+    /* 애니메이션 가속도 */
+    animation-timing-function: ease;
+    /* 애니메이션 시작전과 끝난후 처리방법 
+    forwards 애니메이션이 끝난상태에서 멈춤
+    backwards 애니메이션의 시작이 keyframes의 0%상태에서 시작
+    both ==>forwards + backwards
+    */
+    animation-fill-mode: both;
+
+}
+
+
+/* 애니메이션움직임 제어 */
+@keyframes box_ani {
+    from {
+        /* 시간의 시작지점 0% */
+        margin-left: 200px;
+    }
+
+    to {
+        /* 시간의 끝나는 지점  100% */
+        margin-left: 500px;
+    }
+}
+
+
+.box4 {
+    margin-bottom: 50vh;
+    width: 100px;
+    height: 100px;
+    transform: translate(100px, 100px);
+    background-color: greenyellow;
+    text-align: center;
+    font-size: 30px;
+    line-height: 100px;
+    /* animation-name: box_ani2;
+    animation-duration: 4s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 1s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: normal ;
+    animation-fill-mode: both ; (forwards+backwards) */
+
+
+    animation: box_ani2 4s ease-in-out 1s infinite both;
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+}
+
+@keyframes box_ani2 {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    25% {
+        transform: translate(200px, 0);
+    }
+
+    50% {
+        transform: translate(200px, 200px);
+    }
+
+    75% {
+        transform: translate(0, 200px);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+
+.box5 {
+    display: flex;
+    perspective: 600px;
+
+}
+
+.box5>div {
+    position: relative;
+    width: 49%;
+    height: 300px;
+    background-color: cornflowerblue;
+}
+
+.box5 .c1 {
+    margin-right: 2%;
+    /* perspective: 600px; */
+    transform-style: preserve-3d;
+}
+
+.box5 .c1 .ro {
+    font-size: 40px;
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    background-color: plum;
+    padding: 20px 30px;
+    transform: translateZ(200px) rotateY(45deg);
+    transform-origin: left center;
+}
+
+.box5 .c2 {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    perspective: 600px;
+    will-change: transform;
+}
+
+.box5 .c2 .top {
+    transform-style:preserve-3d;
+}
+
+/* 본체한테만 3d를 줘도 괜찮지만 그위에 부모한테도 주면 조금더 부드러워진다. */
+.box5 .c2 .top div{
+    transform-style:preserve-3d;
+    transform:  rotateX(-90deg);
+    opacity: 0;
+    transition: 0.8 ease;
+}
+
+.box5 .c2 .top:hover div:last-child{
+    transition-delay: 0.4s;
+}
