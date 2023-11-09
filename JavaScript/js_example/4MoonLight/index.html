@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <img src="img/bg.jpg" alt="bg" id="bg">
+        <img src="img/moon.png" alt="moon" id="moon">
+        <img src="img/mountain.png" alt="mountain" id="mountain">
+        <img src="img/road.png" alt="road" id="road">
+        <h2 class="text" id="text"> Moon Night</h2>
+    </section>
+
+    <section class="content">
+        <h3>Parallax Bacground Scrolling</h3>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas non dolore ipsa laborum deleniti at iste nemo corporis labore fuga repellendus sint adipisci provident, ullam, molestiae architecto ea voluptas hic error facilis maiores pariatur in nisi. Suscipit illum quam at nemo, animi eius! Perferendis dolore porro eos eligendi atque maxime repellat dignissimos rem aliquam adipisci est aliquid sed amet culpa, nostrum praesentium non velit rerum quibusdam soluta id accusantium! Illum est cupiditate commodi dolorum beatae officia? Ipsa praesentium animi sunt iusto rem harum, quisquam veniam tempore atque odio repudiandae libero? Eum vero, ratione quibusdam magni accusamus modi illo! Soluta, at.</p>
+    </section>
+
+    <script src="main.js"></script>
+    <script>
+          // let bg = document.getElementById("bg");
+          let bg = document.querySelector("#bg");
+        let moon = document.querySelector("#moon");
+        let mountain = document.querySelector("#mountain");
+        let road = document.querySelector("#road");
+        let text = document.querySelector("#text");
+
+        window.addEventListener("scroll",function(){
+            let value = window.scrollY;
+            console.log(value)
+            moon.style.left = -value * 0.2 +"px" 
+            moon.style.top = value *0.35 + "px"
+
+            bg.style.top = value * 0.2 + "px"
+            mountain.style.top = -value * 0.15 + "px"
+
+            road.style.top = value * 0.2 + "px"
+            text.style.top = value + "px"
+
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //[1] if 조건문
+        // if (조건문) { 괄호안에 조건문이 true 이면 실행되는 실행문}
+        // false -- " ",null
+
+        //한 라인으로 사용할때 괄호는 있어도 되고 없어도 된다.
+
+        let bb = 200;
+        if (bb = 200) {
+            console.log("200점 입니다.")
+        }
+        if (bb = 200) console.log("200점 입니다.");
+
+        if (bb = 200)
+            console.log("200점 입니다.") // 실제 if문은 200점입니다 까지다 밑에 300점입니다는 그냥 console.log
+        console.log("300점 입니다.")
+
+        //두줄이상일때는 절대 {} 를 생략해서는 안된다.
+
+        if (0) { //0은 무조건 false 다른숫자는 무조건 true인데 보통1을씀
+            console.log("실행안됨")
+        }
+
+        if (!null) { // !는 아닌것이 true 이기때문에 null이 아니다 즉 true가된다.
+            console.log("실행됨")
+        }
+
+        let isTest = 10 > 90;
+        if(isTest){
+            console.log("참입니다.")
+        }else{
+            console.log("거짓입니다.")
+        }
+    </script>
+</body>
+
+</html>

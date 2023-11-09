@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //else if -- 복수처리
+
+        /*      if(조건문1){
+                    조건문 1이 참일때 진입
+                    if(조건문2){
+                        조건문 2가 참일때 진입
+                    }
+                }else if(조건문 2){
+                    조건문1은 거짓이고 조건문 2가 참일때 진입
+                }else{
+                    조건문 1,2, 모두 거짓일때 진입
+                }
+         */
+
+/*     let 날씨 = true;
+    if(날씨){
+        console.log("등산을 갑니다.")
+    }else{
+        console.log("집에 있습니다")
+    }
+
+    let 성적 = 87;
+    if(성적 >= 90){
+        console.log("우수학생입니다.")
+    }else if( 성적 >= 80 ){
+        console.log("준우수학생입니다")
+    }else if( 성적 >= 70 ){
+        console.log("잘하고있다")
+    }else{
+        console.log("노력하세요")
+    }
+
+    let age=prompt("나이를 입력하세요","");
+    let 입장료 ="";
+
+    if(age<13 || age>=64){
+        입장료 ="2000원 입니다"
+    }else if(age>=13 && age<20){
+        입장료 = "3000원 입니다."
+    }else{
+        입장료 = "4000원 입니다."
+    }
+
+    console.log(입장료) */
+
+
+   /*  let HTML = prompt("HTML점수를 입력하세요",""); // prompt에 입력하면 문자로 받아진다. 숫자로 바꿔줘야함
+    let CSS = prompt("CSS점수를 입력하세요","");
+    let javaScript = prompt("javaScript점수를 입력하세요","");
+
+    let avg = (Number(HTML) + Number(CSS) + Number(javaScript))/3
+    console.log(avg) */
+/* 
+    let 국어 =60,
+        수학 =97,
+        영어 =52
+    let 과목평균 = (국어 + 수학 + 영어)/3 // 69.666667
+
+    let 반올림 = Math.round(과목평균)
+    let 올림 = Math.cell(과목평균)
+    let 내림 = Math.floor(과목평균)
+
+    //소수점 반올림
+    let 소수점 = 과목평균.toFixed(2)// 소수점 이하자리까지만 표시 69.67로 반올림되어 표기
+ */
+    //삼항연산자
+
+    let 키 = 154;
+
+    if(키>=160){
+       console.log("당신은 탈수있습니다")
+    }else if(키<160 || 키>130){
+        console.log("당신은 탈수있지만 보호자가 필요합니다.")
+    }else{
+        console.log("당신은 탈수 없습니다.")
+    }
+
+    let result = (키>160)? console.log("ㅇㅇ 탈수있음") : console.log("ㄴㄴ 탈수없음")
+    // 조건? [참이면 실행] : [거짓이면실행]
+    </script>
+</body>
+
+</html>

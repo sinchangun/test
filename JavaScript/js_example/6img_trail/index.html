@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="top" style="height: 100vh; background-color: #ccc;"></div>
+
+    <div class="main">
+        <h2>Img_trail</h2>
+        <div class="img img-1"></div>
+        <div class="img img-2"></div>
+        <div class="img img-3"></div>
+        <div class="img img-4"></div>
+        <div class="img img-5"></div>
+    </div>
+
+    <script>
+        let img1 = document.querySelector(".img-1"), //요소로 출력된다.
+            img2 = document.querySelector(".img-2"),
+            img3 = document.querySelector(".img-3"),
+            img4 = document.querySelector(".img-4"),
+            img5 = document.querySelector(".img-5");
+
+        /* let img1 = document.getElementsByClassName("img-1"); //배열로 출력된다. */
+        /* let picture = document.querySelectorAll(".img-1"); //배열로 출력된다. */
+
+        document.addEventListener("mousemove",function(e){
+            console.log("x의값은 " + e.clientX) //화면을 기준으로 환면왼쪽 끝에서부터 0~
+            console.log("y의값은 " + e.clientY) //화면을 기준으로 환면위쪽 끝에서부터 0~
+            img1.setAttribute("style","top:" + (e.clientY - 220) + "px;" +" left:" + (e.clientX - 200) + "px;")
+            img2.setAttribute("style","top:" + (e.clientY - 220) + "px;" +" left:" + (e.clientX - 200) + "px;")
+            img3.setAttribute("style","top:" + (e.clientY - 220) + "px;" +" left:" + (e.clientX - 200) + "px;")
+            img4.setAttribute("style","top:" + (e.clientY - 220) + "px;" +" left:" + (e.clientX - 200) + "px;")
+            img5.setAttribute("style","top:" + (e.clientY - 220) + "px;" +" left:" + (e.clientX - 200) + "px;")
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        *{margin: 0;padding: 0;}
+        .tab{
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+            overflow: hidden;
+        }
+        .tab button{
+            background-color: inherit; /* //보모의 것을 상속받음 */
+            float: left;
+            border: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+        }
+
+        .tab button:hover{
+            background-color: #ddd;
+        }
+        .tabcontent {
+            border: 1px solid #ccc;
+            border-top: none;
+            padding: 6px 16px;
+        }
+
+        .tabcontent .topright{
+            float: right;
+            cursor: pointer;
+            font-size: 28px;
+        }
+
+        .tabcontent .topright:hover{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h2>tabs</h2>
+    <p>오른족에 x 버튼을 클릭하면 현재 tab이 닫힙니다.</p>
+
+    <div class="tab">
+        <button class="tablinks"id="defaultOpen" onclick="openCity(event,'London')">London</button>
+        <!-- "안에 따움표를 하고싶으면 '' 이렇게해서 구분지어줘야한다" -->
+        <button class="tablinks" onclick="openCity(event,'Paris')">Paris</button>
+        <button class="tablinks"onclick="openCity(event,'Tokyo')">Tokyo</button>
+    </div>
+
+    <div id="London" class="tabcontent">
+        <span class="topright">&#215;</span>
+        <h3>London</h3>
+        <p>London is the capital city of England</p>
+    </div>
+    <div id="Paris" class="tabcontent">
+        <span class="topright">&#215;</span>
+        <h3>Paris</h3>
+        <p>Paris is the capital city of France</p>
+    </div>
+    <div id="Tokyo" class="tabcontent">
+        <span class="topright">&#215;</span>
+        <h3>Tokyo</h3>
+        <p>Tokyo is the capital city of Japan</p>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

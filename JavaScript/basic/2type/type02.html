@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //[1] typeof 연산자
+        // typeof value
+        // typeof(value)
+        // 피연산자가 어떤 자료형인지 반환
+
+        let name = "신창언";
+        console.log(typeof name);
+        console.log(typeof(name));
+
+        let isThisReal = false;
+        console.log(typeof isThisReal);
+        
+        let isNullCheck = null;// 의도적으로 값을 비워놔야할때
+
+        let a =undefined;// undefined는 변수를 선언만 해줘도 자동으로 할당되는 값.데이터타입이다.
+        let b;// 선언만 하고 할당하지 않은상태
+
+        console.log("변수a의타입은 = " + typeof a + " 입니다")
+        console.log("변수b의타입은 = " + typeof b + " 입니다")
+
+        console.log(`변수b의타입은 ${typeof b} 입니다`)
+        //백틸(`)을 사용해서 간단하게 표현 가능하다 변수만 ${}로 해주면된다.
+
+        let first_class_level = "6교시";
+        let level_groub_num = 30;
+
+        // 출력 지금 수업은 6교시가 진행중이고 30분이 지났습니다.
+        console.log("지금 수업은" + first_class_level +"가 진행중이고 " + level_groub_num + "분이 지났습니다.");
+        console.log(`지금 수업은${first_class_level}가 진행중이고 ${level_groub_num}분이 지났습니다.`)
+    </script>
+</body>
+</html>

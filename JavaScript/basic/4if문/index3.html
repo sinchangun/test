@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //제어문종류
+        //조건문 if switch
+        //반복문
+
+        //switch 조건문
+        //[특징]
+        // if .. else -- 조건문이 불리언값으로 평가 true false
+        //switch 조건문 -- 평가 -- 숫자값 도는 문자의 값 (보통 분기처리할때 사용)
+
+        /*         switch(값){
+                    case 값1: 실행문 (값이 값1 같을때 실행);
+                    break;// switch문을 종료
+                    case 값2: 실행문 (값이 값2 같을때 실행);
+                    break;
+                    case 값3: 실행문 (값이 값3 같을때 실행);
+                    break;
+                    default: 실행문 (전부 아닐경우 실행) 
+                } */
+
+        /*         let number = 3;
+                switch(number){
+                    case 1: console.log("1번입니다");
+                    break;// switch문을 종료
+                    case 2: console.log("2번입니다");
+                    break;
+                    case 3: console.log("3번입니다");
+                    break;
+                    default: console.log("해당하지않습니다");
+                    break; 
+                } 
+
+                let A;
+                A = A + 100;
+         */
+        let 입장료 = prompt("아동,청소년,성인중 선택입력", "")
+        switch (입장료) {
+            case "아동":
+                입장료 = 입장료 + "입장료 2000원 입니다"
+                break;
+            case "청소년":
+                입장료 = 입장료 + "입장료 5000원 입니다"
+                break;
+            case "성인":
+                입장료 = 입장료 + "입장료 10000원 입니다"
+                break;
+            default:
+                입장료 = "입력을 다시 하세요"
+        }
+        console.log(입장료);
+
+
+        let day = new Data().getDay();
+        // 1 = 월 2 =화 3 = 수 4 = 목 5 = 금 6 =토 0 = 일
+        console.log(day)
+
+        switch (day) {
+            case 0:
+                document.write("일요일 입니다.");
+                break;
+            case 1:
+                document.write("월요일 입니다.");
+                break;
+            case 2:
+                document.write("화요일 입니다.");
+                break;
+            case 3:
+                document.write("수요일 입니다.");
+                break;
+            case 4:
+                document.write("목요일 입니다.");
+                break;
+            case 5:
+                document.write("금요일 입니다.");
+                break;
+            case 6:
+                document.write("토요일 입니다.");
+                break;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,132 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #ddd;
+}
+
+.main {
+    position: relative;
+    height: 100vh;
+}
+
+.cube {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    perspective: 1500px;
+    transform: translate(-50%, -50%);
+}
+
+.box-area {
+    position: relative;
+    transform: rotateX(0deg) rotateY(0deg);
+    transform-style: preserve-3d;
+    transition: 0.5s;
+    width: 400px;
+    height: 400px;
+}
+
+.box-area .box {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    border: 2px solid #262626;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+}
+
+.box-area .box h2 {
+    font-size: 50px;
+    color: white;
+}
+
+.box-area .box-front {
+    background-color: hsla(180, 100%, 50%, 0.5);
+    transform: translateX(0px) translateY(0px) translateZ(200px)rotateX(0deg);
+}
+
+.box-area .box-right {
+    background-color: hsla(135, 39%, 47%, 0.5);
+    transform: translateX(200px) translateY(0px) translateZ(0px)rotateY(90deg);
+}
+
+.box-area .box-back {
+    background-color: hsla(147, 100%, 50%, 0.5);
+    transform: translateX(0px) translateY(0px) translateZ(-200px)rotateX(0deg);
+}
+
+.box-area .box-left {
+    background-color: hsla(66, 100%, 50%, 0.5);
+    transform: translateX(-200px) translateY(0px) translateZ(0px)rotateY(90deg);
+}
+
+
+.box-area .box-top {
+    background-color: hsla(281, 100%, 50%, 0.5);
+    transform: translateX(0px) translateY(-200px) rotateX(90deg);
+}
+
+.box-area .box-bottom {
+    background-color: hsla(0, 11%, 50%, 0.5);
+    transform: translateX(0px) translateY(200px) rotateX(90deg);
+}
+
+.button {
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+
+.button>div {
+    position: absolute;
+}
+
+.button .rotate-x-button {
+    left: -300px;
+}
+
+.button button {
+    width: 38px;
+    text-align: center;
+    background-color: #262626;
+    border-radius: 50%;
+    color: #fff;
+    height: 38px;
+    line-height: 38px;
+    cursor: pointer;
+}
+
+.button .rotate-x-button .rotate-x-bottom {
+    display: block; margin-top: 10px;
+}
+
+.button .rotate-x-button .rotate-x-top {}
+
+.button .rotate-y-button {
+    bottom: -350px;
+    display: flex;
+    transform: translateX(-50%);
+}
+
+.button .rotate-y-button .rotate-y-right {}
+
+.button .rotate-y-button .rotate-y-left {
+    margin-right: 50px;
+}
+
+.button .front {
+    bottom: -350px;
+    width: 40px;text-align: center;
+    transform: translate(-50% , -50%);
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //비교연산자
+        //불리언형 -- true of false
+
+        console.log(100 < 200) // 참이기때문에 ture
+        console.log(100 == 200) // false 같지않기때문
+        console.log(100 != 200) // true != 는 a와b가 다른가를 묻기때문에 true
+
+        console.log(100<=200) //작거나 같은가? <기호 반대로 적으면 적용안됨
+
+        //And/OR 연산자
+
+        console.log( true && true )//true
+        console.log( false && true )//false
+        console.log( true && false )//false
+        console.log( false && false )//false
+
+        //양쪽 모두 true일때만 ture 조건을 전부 만족시켜야함
+
+
+    
+        console.log( true || true )//true
+        console.log( false || true )//true
+        console.log( true || false )//frue
+        console.log( false || false )//false
+
+        //or연산자는 한가지만 만족하면된다.
+
+        //[??] null 병합 연산자
+        let x;
+        x ?? console.log(x,"x에 값이 없습니다.") // undefined , "x에 값이 없습니다"
+
+        let xx = 0;
+        xx ?? console.log(xx,"xx에 값이 없습니다.") //실행이 안됨 
+        // null 또는 undefined만 대체
+
+        let xxx = null;
+        xxx ?? console.log(xxx,"x에 값이 없습니다") //실행됨
+
+        let baby1 = "홍길동";
+        let baby2
+        let nameTag1 = baby1 ?? "1번아기";
+        let nameTag2 = baby2 ?? "2번아기";
+
+        console.log(nameTag1)// 홍길동
+        console.log(nameTag2)// 2번아기
+        // ??는 null일때만 반응하기때문에 baby1 ?? "1번아기" 는 홍길동에서 변하지않고
+        // baby2 ?? "2번아기" 는 undefined 이기때문에 2번아기가 들어오게된다.
+
+        //단항 산술
+
+        //후치 연산자 x++
+        //전치 연산자 ++x
+
+        //단항 부정
+        // !x -- x에 부정 x가 true이면 false가되고 x가 false이면 true이다
+
+        let yarn = 1;
+        yarn++;
+        console.log(yarn)//2
+
+        ++yarn;
+        console.log(yarn)//3
+
+        //정수와 실수 비교 
+
+        console.log( 10 == 10.0 ) //true javaScript에서는 정수와 실수를 각가의 자료형으로 구분하지않는다.
+
+        console.log(Number.isInteger(10)) //true
+        console.log(Number.isInteger(0.1)) //false
+        console.log(Number.isInteger(10.1)) //false
+        console.log(Number.isInteger(10.0)) //true 주의하기
+
+        //문자열 -- 정수로 바꾸기
+
+        let someValue = "10";
+
+        console.log(Number.isInteger(somevalue)); ///false
+        console.log(Number.isInteger(Number.parseInt(somevalue))); ///true
+
+        let aa ="100 200 300"
+        console.log(Number.paresInt(aa)) // 공백이 있으면 맨앞에 숫자만 정수로 변환된다.
+
+        let bb ="3.14만명"
+        console.log(Number.parseInt(bb)) // 3.14 자바에서만 가능함
+
+        console.log( 10 == "10") // true
+        console.log( 10 === "10") // false 자료형까지 참조기때문에 
+
+        
+    </script>
+</body>
+</html>

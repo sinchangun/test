@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h2>Scroll Down</h2>
+        <p>Scroll down to see the sticky effect.</p>
+    </header>
+
+    <nav id="navbar">
+        <a href="javascript:void(0)" class="active">Home</a>
+        <a href="javascript:void(0)">News</a>
+        <a href="javascript:void(0)">contact</a>
+    </nav>
+
+    <div class="content">
+        <h3>Lorem, ipsum dolor.</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, suscipit.</p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod dolore libero, atque quos aut suscipit commodi similique quas assumenda, facere expedita illo veritatis optio nobis consectetur aliquam eveniet omnis id, laborum ut nesciunt vero. Consequuntur facilis ullam laudantium minima animi, ipsa, cupiditate culpa, aspernatur enim mollitia quam sint ratione dolorum!
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod dolore libero, atque quos aut suscipit commodi similique quas assumenda, facere expedita illo veritatis optio nobis consectetur aliquam eveniet omnis id, laborum ut nesciunt vero. Consequuntur facilis ullam laudantium minima animi, ipsa, cupiditate culpa, aspernatur enim mollitia quam sint ratione dolorum!
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod dolore libero, atque quos aut suscipit commodi similique quas assumenda, facere expedita illo veritatis optio nobis consectetur aliquam eveniet omnis id, laborum ut nesciunt vero. Consequuntur facilis ullam laudantium minima animi, ipsa, cupiditate culpa, aspernatur enim mollitia quam sint ratione dolorum!
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod dolore libero, atque quos aut suscipit commodi similique quas assumenda, facere expedita illo veritatis optio nobis consectetur aliquam eveniet omnis id, laborum ut nesciunt vero. Consequuntur facilis ullam laudantium minima animi, ipsa, cupiditate culpa, aspernatur enim mollitia quam sint ratione dolorum!
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod dolore libero, atque quos aut suscipit commodi similique quas assumenda, facere expedita illo veritatis optio nobis consectetur aliquam eveniet omnis id, laborum ut nesciunt vero. Consequuntur facilis ullam laudantium minima animi, ipsa, cupiditate culpa, aspernatur enim mollitia quam sint ratione dolorum!
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod dolore libero, atque quos aut suscipit commodi similique quas assumenda, facere expedita illo veritatis optio nobis consectetur aliquam eveniet omnis id, laborum ut nesciunt vero. Consequuntur facilis ullam laudantium minima animi, ipsa, cupiditate culpa, aspernatur enim mollitia quam sint ratione dolorum!
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod dolore libero, atque quos aut suscipit commodi similique quas assumenda, facere expedita illo veritatis optio nobis consectetur aliquam eveniet omnis id, laborum ut nesciunt vero. Consequuntur facilis ullam laudantium minima animi, ipsa, cupiditate culpa, aspernatur enim mollitia quam sint ratione dolorum!
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod dolore libero, atque quos aut suscipit commodi similique quas assumenda, facere expedita illo veritatis optio nobis consectetur aliquam eveniet omnis id, laborum ut nesciunt vero. Consequuntur facilis ullam laudantium minima animi, ipsa, cupiditate culpa, aspernatur enim mollitia quam sint ratione dolorum!
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod dolore libero, atque quos aut suscipit commodi similique quas assumenda, facere expedita illo veritatis optio nobis consectetur aliquam eveniet omnis id, laborum ut nesciunt vero. Consequuntur facilis ullam laudantium minima animi, ipsa, cupiditate culpa, aspernatur enim mollitia quam sint ratione dolorum!
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod dolore libero, atque quos aut suscipit commodi similique quas assumenda, facere expedita illo veritatis optio nobis consectetur aliquam eveniet omnis id, laborum ut nesciunt vero. Consequuntur facilis ullam laudantium minima animi, ipsa, cupiditate culpa, aspernatur enim mollitia quam sint ratione dolorum!
+        </p>
+    </div>
+
+    <script>
+    //   window.addEventListener('scroll',function(){
+    //     myFunction();
+    //   })  
+
+    //scroll이 발생하면 실행하는 function안에 단지 myFunction(); 과 같이 함수를 호출하는 내용 뿐이면 아래와 같이 단축할수 있다.
+    //window.addEventListener('scroll',myFunction)
+
+    //   window.onscroll=function(){
+    //     myFunction();
+    //   }
+
+      window.onscroll= myFunction;
+
+
+     let navbar=document.getElementById('navbar')
+     //offset은 Document를 기준으로 하는 좌표를 구한다.
+     //position은 부모을 기준으로 좌표를 구한다.
+     let sticky=navbar.offsetTop;
+     // navbar의 스크롤바를 내렸을때 가지는 높이값 154만큼 스크롤을 내리면 navbar가 top에 도달한다.
+     console.log(sticky)
+
+      function myFunction(){
+        //console.log(window.scrollY)
+        console.log(window.pageYOffset)
+        if(window.pageXOffset>sticky){
+            navbar.classList.add("sticky"); // 자스에서 addclass 하는방법
+        }else{
+            navbar.classList.remove("sticky"); 
+        }
+      }
+    </script>
+</body>
+</html>

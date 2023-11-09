@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //반복문 - for . while . do..while . break . contine
+
+        //for문 -- 가장 대표적인 반복문 연속된 동일한 반복작업을 처리할때 사용
+
+        /*      for (let i = 9; i >= 2; i--) {
+                 document.write("<br/>")
+                 for(let j = 9; j >= 1; j--){
+                     document.write(`${i} * ${j} = ${i * j}`+ " , ")
+                     
+                 }
+             } */
+        // 별찍기
+        let output = "";
+
+
+
+        for (let k = 0; k <= 5; k++) {
+            for (let z = 5 - k; z >= 1; z--) {
+                output = output + "*";
+            }
+            document.write(output + "<br/>");
+            output = "";
+            
+        }
+    </script>
+</body>
+
+</html>

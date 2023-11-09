@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //var,let,const 키워드들로 선언된 변수들의 특징및 차이점
+
+        //[1] let
+        //변수를 만들대 변수명 앞에 적는 키워드중 하나
+        //스코프(scope) : 범위 (프로그램에서의 범위를 의미)
+        //let, const -- 블럭레벨 스코프
+
+        //[2] var
+        //함수내에서 선언된 변수는 함수내에서만 유효이다 -- 함수밖에서는 참조할수없다.
+        //함수 내부에서 선언된 변수 -- 지역변수
+        //함수 외부에서 선언된 변수 -- 전역변수
+        //함수 -- function(){}
+
+        //[3] 블록 레벨 스코프 // let, const
+        //function(){},if(){},for(){},while(){} 문 등에서 선언된 변수는 블록내에서만
+        // 유효하다 -- 블록밖에어선 참조할수없다.
+
+        if(true){
+            var name ="홍길동";
+        }
+        console.log(name);
+
+        if(true){
+            let name1 ="홍길동";
+            console.log(name1);
+        }
+        // console.log(name1);
+
+        // let은 함수밖에서 사용할수없다. name1을 부르기위해선 name1이 적힌 if문 안에있어야한다
+        // let 키워드를 사용하여 변수를 만들면 의도치않게 전역변수가 되어지는것을 막을수있다.
+
+        // 호이스팅이 되는것 : var변수 ,이름이 있는 함수 즉 위에 console.log(name)을
+        // if 함수위에적어도 불러진다.
+
+        //[4] 변수선언및 값 셋팅(할당)
+
+        let user;//user 라는 이름을 가진 변수를 생성한다 (선언만했다) 실행하면 undefind라고 뜸
+
+        user="강감찬";
+        console.log(user);// "" 을 사용하면 선언과 동시에 할당할수있다 user를 실행하면 강감찬이라고뜸
+
+        /*   let namename ="이순신";
+        let age =44;
+        let email="test@naver.com" */
+
+        let namename ="이순신"
+            age =44
+            email ="test@naver.com"
+
+        //[5] const 불변 할당된값이 변경되지않도록 변수를 만들수있다.
+        const name4 = "김순둥";
+        console.log(name4);
+        //생성과 동시에 할당해야한다 따로 할당은 안됨
+
+        //상수 사용방법
+        // 다른 개발자들에게 상수라는 것을 알리는 용도로 cosnst 키워드를 사용하여 변수를 생성
+        // 관습적으로 대문자료 표시를 많이함
+    </script>
+</body>
+</html>

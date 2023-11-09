@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //함수 -- 함수 선언문 vs 함수 표현식
+
+        let 나함수 = function () {
+            console.log("이름없는함수")
+        };
+
+        나함수(); //변수이름을 이용하여 함수실행
+        console.log(나함수);
+
+        let 다른함수 = 나함수;
+        console.log(다른함수);
+
+
+        /*let height = prompt("당신의 키를 입력하세요",140);
+
+        if(height<120){
+            function showMassage(){console.log("키가 작아서 청룡열차를 탈수 없습니다.")}
+            showMassage();
+        }else{
+            function showMassage(){console.log("청룡열차를 탈수 있습니다.")}
+            showMassage();
+        } */
+
+        /* let height = prompt("당신의 키를 입력하세요", 140);
+        let showMassage;
+
+        if (height < 120) {
+            showmassage = function() {
+                console.log("키가 작아서 청룡열차를 탈수 없습니다.")
+            }
+        } else {
+            showmassage = function() {
+                console.log("청룡열차를 탈수 있습니다.")
+            }
+        }
+        showmassage(); */
+
+        let height = prompt("당신의 키를 입력하세요", 140);
+        let showMassage = (height < 120) ?
+            function () {
+                console.log("키가 작아서 청룡열차를 탈수 없습니다.")
+            } :
+            function () {
+                console.log("청룡열차를 탈수 있습니다.")
+            }
+
+            showMassage();
+
+        //함수선언문 vs 함수 표현식
+
+        //조건에 따른 특정함수를 수행해야한다면 보통 함수표현식을 많이 사용한다.
+        // react같은 javaScript 라이브러리에서 함수표현식과 화살표함수를 사용하게 되는데
+    </script>
+</body>
+
+</html>

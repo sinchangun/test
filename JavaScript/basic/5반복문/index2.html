@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //반복문 while
+
+      /*   while(조건문){
+            조건문이 참일때 실행되는 실행문
+        } */
+
+        /* let i = 1;
+        while(i<=10){
+            console.log(i)
+            i++
+        }
+
+        let j = 10;
+        while(j>=1){
+            console.log(j)
+            j--
+        } */
+
+        /* let i =1 ;
+        while(i<3){
+            let j=1;
+            while(j<3){
+                document.write(`${i}*${j}=${i*j}`)
+                j++
+            }
+            i++
+        } */
+
+        /* let i=2;
+        while(i<=9){
+            let j=1
+            while(j<=9){
+                document.write(`${i}*${j}=${i*j}`+",")
+                j++
+            }
+            
+            i++
+            document.write("<br/>");
+        }
+
+        let k = 1;
+        while(k<=100){
+            document.write(`${k}번째 선수 입장 입니다.<br/> `)
+            if(k>5){
+                break; //while 문종료
+            }
+            k++
+        } */
+
+        let c = 1;
+
+        while(c<=20){
+            
+            c++
+            if(c%2 == 0){
+                continue;//while문 종료, 중지문 break는 아예 종료시켜버리지만 continue는 조건에 해당하는것만 통과시켜버림
+            }
+            document.write(`${c}번째 선수 입장입니다.<br/>`)
+        }
+    </script>
+</body>
+</html>
