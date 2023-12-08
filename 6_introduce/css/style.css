@@ -1,0 +1,483 @@
+@charset "UTF-8";
+
+/* **** 구글 폰트 연결 **** */
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400;1,500;1,700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
+
+/* 
+font-family: 'Noto Sans KR', sans-serif;
+font-family: 'Roboto', sans-serif;
+font-family: 'Black Han Sans', sans-serif;
+*/
+
+/* layout 영역 */
+
+#section1 {
+    width: 100%;
+    height: 100vh;
+    color: #fff;
+    background-color: #222222;
+}
+
+#section1 .container {
+    height: 100%;
+    overflow: hidden;
+}
+
+#section1 .container .intro_page1 {
+    height: 100%;
+    background-color: #222222;
+    transition: 4s;
+}
+
+#section1.loading_end .container .intro_page1 {
+    transform: translateY(-100%);
+}
+
+#section1 .container .intro_page2 {
+    height: 100%;
+    background-color: #222222;
+    transition: 4s;
+}
+
+#section1.loading_end .container .intro_page2 {
+    transform: translateY(-100%);
+}
+
+/* section1 영역 (intro_page1) */
+
+.intro_page1 {
+}
+
+.intro_page1 .intro_desc {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.intro_page1 .intro_desc>p {
+    font-family: 'Black Han Sans', sans-serif;
+    font-size: 30px;
+}
+
+.intro_page1 .intro_desc .loadingBar {
+    position: relative;
+    background-color: #999999;
+    width: 300px;
+    height: 30px;
+    border-radius: 20px;
+    margin-top: 30px;
+}
+
+.intro_page1 .intro_desc .loadingBar .lodingbar_active {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 30px;
+    background-color: #fff;
+    border-radius: 20px;
+}
+
+.intro_page1 .intro_desc .itp-1_arrow{
+    position: absolute;
+    font-size: 3vw;
+    color: #fff;
+    top: 90%;
+    opacity: 0;
+    transition: 0.2s;
+}
+
+#section1.loading_end .intro_page1 .intro_desc .itp-1_arrow{
+    opacity: 1;
+}
+
+.intro_page1 .intro_desc .itp-1_arrow.itp-1_left_arrow{
+    left: 10%;
+}
+
+.intro_page1 .intro_desc .itp-1_arrow.itp-1_right_arrow{
+   right: 10%;
+}
+
+.intro_page1 .intro_desc .itp-1_arrow i:nth-child(2){
+    position: absolute;
+    font-size: 2.5vw;
+    top: -50%;
+    left: 0.25vw;
+    opacity: 0.5;
+}
+.intro_page1 .intro_desc .itp-1_arrow i:nth-child(3){
+    position: absolute;
+    font-size: 2vw;
+    top: -110%;
+    left: 0.5vw;
+    opacity: 0.2;
+}
+
+/* section1 영역 (intro_page2) */
+
+.intro_page2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.intro_page2 .intro_title{
+    position: relative;
+    width: 95%;
+    height: 95%;
+}
+
+.intro_page2 .intro_title .inp-2_mainCont{
+    width: 100%;height: 100%;
+}
+
+.intro_page2 .intro_title .inp-2mc_head{
+    position: relative;
+    width: 100%;
+    height: 5%;
+    overflow: hidden;
+    opacity: 0;
+    transition: 2s;
+}
+
+.intro_page2 .intro_title .inp-2mc_head.circle_end{
+    opacity: 1;
+}
+
+.intro_page2 .intro_title .inp-2mc_head .head_box{
+    width: 200%;
+    height: 100%;
+    /* border-radius: 30px; */
+    display: flex;
+    align-items: center;
+    animation: inp-2mc_start 10s linear infinite ;
+}
+
+.intro_page2 .intro_title .inp-2mc_head.stopAni .head_box{
+    animation-play-state: paused;
+}
+
+@keyframes inp-2mc_start {
+    0% {
+        transform: translateX(0%)
+    }
+
+    100% {
+        transform: translateX(-50%)
+    }
+}
+
+.intro_page2 .intro_title .inp-2mc_head::after{
+    content: "";
+    position: absolute;
+    top: 0;left: 0;
+    width: 8%;
+    height: 100%;
+    background: linear-gradient(to right,rgb(33, 33, 33),rgba(33, 33, 33, 0));
+}
+
+.intro_page2 .intro_title .inp-2mc_head::before{
+    content: "";
+    position: absolute;
+    top: 0;right: 0;
+    width: 8%;
+    height: 100%;
+    background: linear-gradient(to left,rgb(33, 33, 33),rgba(33, 33, 33, 0));
+    z-index: 2;
+}
+
+.intro_page2 .intro_title .head_box>div{
+    position: relative;
+    height: 80%;
+    width: 7.142%;
+    /* border-radius: 30px; */
+}
+
+.intro_page2 .intro_title .head_box>div::before{
+    content: "";
+    position: absolute;
+    width: 10% ;height: 60%;
+    top: 0;left: 30%;
+    background-color: #222222;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+}
+
+.intro_page2 .intro_title .head_box>div::after{
+    content: "";
+    position: absolute;
+    width: 10% ;height: 60%;
+    bottom: 0;right: 30%;
+    background-color: #222222;
+    border-top-right-radius: 50%;
+    border-top-left-radius: 50%;
+}
+
+.red{
+    background: linear-gradient(to right,red,orange);
+}
+
+.orange{
+    background: linear-gradient(to right,orange,yellow);
+}
+
+.yellow{
+    background: linear-gradient(to right,yellow,green);
+}
+
+.green{
+    background: linear-gradient(to right,green,blue);
+}
+
+.blue{
+    background: linear-gradient(to right,blue,Indigo);
+}
+
+.Indigo{
+    background: linear-gradient(to right,Indigo,Violet);
+}
+
+.Violet{
+    background: linear-gradient(to right,Violet,red);
+}
+
+.intro_page2 .intro_title .inp-2mc_body{
+    width: 100%;
+    height: 90%;
+}
+
+.intro_page2 .intro_title .inp-2mc_foot{
+    position: relative;
+    width: 100%;
+    height: 5%;
+    overflow: hidden;
+    opacity: 0;
+    transition: 2s;
+    z-index: -1;
+}
+
+.intro_page2 .intro_title .inp-2mc_foot.circle_end{
+    opacity: 1;
+}
+
+
+.intro_page2 .intro_title .inp-2mc_foot .foot_box{
+    width: 200%;
+    height: 100%;
+    /* border-radius: 30px; */
+    display: flex;
+    align-items: center;
+    animation: inp-2mc_end 10s linear infinite ;
+}
+
+.intro_page2 .intro_title .inp-2mc_foot.stopAni .foot_box{
+    animation-play-state: paused;
+}
+
+
+@keyframes inp-2mc_end {
+    0% {
+        transform: translateX(-50%)
+    }
+
+    100% {
+        transform: translateX(0%)
+    }
+}
+
+.intro_page2 .intro_title .inp-2mc_foot::after{
+    content: "";
+    position: absolute;
+    bottom: 0;left: 0;
+    width: 8%;
+    height: 100%;
+    background: linear-gradient(to right,rgb(33, 33, 33),rgba(33, 33, 33, 0));
+}
+
+.intro_page2 .intro_title .inp-2mc_foot::before{
+    content: "";
+    position: absolute;
+    bottom: 0;right: 0;
+    width: 8%;
+    height: 100%;
+    background: linear-gradient(to left,rgb(33, 33, 33),rgba(33, 33, 33, 0));
+    z-index: 2;
+}
+
+.intro_page2 .intro_title .foot_box>div{
+    position: relative;
+    height: 80%;
+    width: 7.142%;
+    /* border-radius: 30px; */
+}
+
+.intro_page2 .intro_title .foot_box>div::before{
+    content: "";
+    position: absolute;
+    width: 10% ;height: 60%;
+    top: 0;right: 30%;
+    background-color: #222222;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+}
+
+.intro_page2 .intro_title .foot_box>div::after{
+    content: "";
+    position: absolute;
+    width: 10% ;height: 60%;
+    bottom: 0;left: 30%;
+    background-color: #222222;
+    border-top-right-radius: 50%;
+    border-top-left-radius: 50%;
+}
+
+.intro_page2 .intro_title .inp-2mc_body {
+    display: flex;
+}
+
+.intro_page2 .intro_title .inp-2mc_body>div{
+    position: relative;
+    width: 10%; background-color: rgba(255, 255, 255, 0.7);
+    height: 100%;
+    margin-left: 1%;
+    transition: 1s;
+    opacity: 0;
+}
+
+.intro_page2 .intro_title .inp-2mc_body>div.active{
+    width: 15%;
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.intro_page2 .intro_title .inp-2mc_body>div:nth-last-child(even){
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+.intro_page2 .intro_title .inp-2mc_body>div:nth-last-child(odd){
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+
+.intro_page2 .intro_title .inp-2mc_body .inp_section1{
+    margin-left: 5%;
+    
+}
+
+.intro_page2 .intro_title .circles{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 4;
+}
+.intro_page2 .intro_title .it_circle{
+    position: absolute;
+    
+}
+
+.intro_page2 .intro_title .circle_out{
+    width: 500px;
+    top: calc(50% - 250px);
+    left: calc(50% - 250px);
+    height: 500px;
+    border-radius: 50%;
+    border: 2px dashed #999999;
+    animation: rotate_reverse 90s linear infinite;
+    animation-delay: 7s;
+    opacity: 0;
+}
+
+.intro_page2.select_section .intro_title .circle_out{
+    animation-play-state: paused;
+    display: none;
+}
+
+.intro_page2 .intro_title .circle_mid{
+    top: calc(50% - 240px);
+    left: calc(50% - 240px);
+    width: 480px;
+    height: 480px;
+    border-radius: 50%;
+    border: 2px dashed #cccccc;
+    animation: rotate 70s linear infinite;
+    animation-delay: 7s;
+    opacity: 0;
+}
+
+
+.intro_page2.select_section .intro_title .circle_mid{
+    animation-play-state: paused;
+    display: none;
+}
+
+@keyframes rotate{
+    0%{transform: rotate(0deg);}
+    100%{transform: rotate(360deg);}
+}
+
+@keyframes rotate_reverse{
+    0%{transform: rotate(0deg);}
+    100%{transform: rotate(-360deg);}
+}
+
+.intro_page2 .intro_title .circle_vis{
+    top: calc(50% - 230px);
+    left: calc(50% - 230px);
+    width: 460px;
+    height: 460px;
+    border-radius: 50%;
+    overflow: hidden;
+    animation: rotate_reverse 180s linear infinite;
+    border: 2px solid  #222222;
+    transition: 0.5s;
+}
+
+.intro_page2.select_section .intro_title .circle_vis{
+    border: 2px solid #cccccc;
+    animation: rotate_reverse 0s linear;
+}
+
+.intro_page2 .intro_title .circle_vis img{
+    position: relative;
+    top: calc(50% - 300px);left: calc(50% - 460px);
+    width: 200%;
+}
+
+.intro_page2 .intro_title .itp-2_arrow{
+    position: absolute;
+    font-size: 3vw;
+    color: #fff;
+    top: 50%;
+    opacity: 0;
+    transition: 0.2s;
+    transform: rotate(90deg);
+}
+
+
+.intro_page2 .intro_title .itp-2_left_arrow{
+    left: 10%;
+}
+
+.intro_page2 .intro_title .itp-2_right_arrow{
+   right: 10%;
+}
+
+.intro_page2 .intro_title i:nth-child(2){
+    position: absolute;
+    font-size: 2.5vw;
+    top: -50%;
+    left: 0.25vw;
+    opacity: 0.5;
+}
+.intro_page2 .intro_title i:nth-child(3){
+    position: absolute;
+    font-size: 2vw;
+    top: -110%;
+    left: 0.5vw;
+    opacity: 0.2;
+}
